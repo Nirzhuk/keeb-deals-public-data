@@ -1,0 +1,17 @@
+[{
+    "name": "CandyKeys",
+    "country": "Germany",
+    "zone": "EU",
+    "currency": "EUR",
+    "url": "https://candykeys.com/",
+    "favicon": "https://webiz.ams3.cdn.digitaloceanspaces.com/ck/favicon/favicon-32x32.png",
+    "couponCode": "URYFTW10"
+},
+{
+    "name": "Eloquent Clicks",
+    "country": "Spain",
+    "zone": "EU",
+    "currency": "EUR",
+    "url": "https://www.eloquentclicks.com/",
+    "favicon": "https://webiz.ams3.cdn.digitaloceanspaces.com/ck/favicon/favicon-32x32.png"
+}]

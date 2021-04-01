@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env:
+      MONGO: ${{ secrets.MONGO }}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/checkout@v2
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Create mongo Docker container
+        id: build_mongo_docker
+        uses: DigiPie/mongo-action@v1.0.1
+        with:
+          image-version: latest
+          port: 27017
+      - name: Test mongo connection
+        id: test_mongo_connection
+        run: sudo mongo localhost:27017
+
+      - name: Import Vendors into Database
+        run: mongoimport --uri $MONGO --collection vendors --drop --jsonArray --file vendors/index.json
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          sudo ls
