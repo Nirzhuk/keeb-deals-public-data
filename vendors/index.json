@@ -1,4 +1,5 @@
 [{
+    "id": "candykeys",
     "name": "CandyKeys",
     "country": "Germany",
     "zone": "EU",
@@ -8,6 +9,7 @@
     "couponCode": "URYFTW10"
 },
 {
+    "id": "eloquent-clicks",
     "name": "Eloquent Clicks",
     "country": "Spain",
     "zone": "EU",
